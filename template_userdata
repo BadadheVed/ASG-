@@ -1,0 +1,9 @@
+Add the following script while making the template in the template creation in the AWS console
+SO that the whenever new instance starts it will do the above things
+we are using this because we are curretly at the Kubernetes level
+
+#!/bin/bash
+cd ~/asg
+npm install -g pm2
+export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v18.20.8/bin/
+pm2 start --interpreter /home/ubuntu/.nvm/versions/node/v18.20.8/bin/bun bun bin.ts
